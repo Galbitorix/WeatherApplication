@@ -1,0 +1,5 @@
+WundergroundKey.txt
+GoogleLatLongToCityKey.txt
+GoogleLocationKey.txt
+.cabal-sandbox/**
+dist/**
