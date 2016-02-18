@@ -3,6 +3,7 @@
 
 module GeoShit where
 
+import            System.IO
 import            Data.Aeson
 import            Data.Aeson.Types
 import            Network.HTTP.Client
@@ -35,12 +36,11 @@ instance ToJSON AccessPoint
 
 testReq :: IO (Maybe Location)
 testReq = do
-
   manager <- newManager tlsManagerSettings
 
   -- Create the request
-  locationKey <- readFile "GoogleLocationKey.txt"
-  initialRequest <- parseUrl "https://www.googleapis.com/geolocation/v1/geolocate?key=" ++ locationKey
+  locationKey <- readFile "/home/frank/bin_storage/GoogleLocationKey.txt"
+  initialRequest <- parseUrl $ "https://www.googleapis.com/geolocation/v1/geolocate?key=" ++ (newLength locationKey) -- because readFile adds \n to end of string
   let request = initialRequest { method = "POST", requestBody = RequestBodyLBS $ encode req }
   response <- httpLbs request manager
 --  putStrLn $ "The status code was: " ++ (show $ statusCode $ responseStatus response)
@@ -62,9 +62,9 @@ lookupLatLong l = case l of
     let lt = lat loc
         lg = lng loc
     manager <- newManager tlsManagerSettings
-    latlongToCityKey <- readFile "GoogleLatLongToCityKey.txt"
+    latlongToCityKey <- readFile "/home/frank/bin_storage/GoogleLatLongToCityKey.txt"
     request <- parseUrl $
-               "https://maps.googleapis.com/maps/api/geocode/json?latlng=" ++ show lt ++ "," ++ show lg ++ "&location_type=approximate&result_type=locality&key=" ++ latlongToCityKey
+               "https://maps.googleapis.com/maps/api/geocode/json?latlng=" ++ show lt ++ "," ++ show lg ++ "&location_type=approximate&result_type=locality&key=" ++ (newLength latlongToCityKey)
     response <- httpLbs request manager
     let res = B.unpack $ responseBody response
     let res' = getAllTextMatches $ res =~ ("\"formatted_address\" : .*$" :: String) :: [String]
@@ -74,3 +74,6 @@ lookupLatLong l = case l of
 
     -- print res''''
     return $ res''''
+
+newLength :: [Char] -> [Char] -- necessary because readFile adds \n to end of string
+newLength x = take ((length x) - 1) x

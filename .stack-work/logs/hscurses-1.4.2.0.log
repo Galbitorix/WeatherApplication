@@ -1,0 +1,109 @@
+[1 of 1] Compiling Main             ( /tmp/stack19078/hscurses-1.4.2.0/Setup.hs, /tmp/stack19078/hscurses-1.4.2.0/.stack-work/dist/x86_64-linux/Cabal-1.22.5.0/setup/Main.o )
+Linking /tmp/stack19078/hscurses-1.4.2.0/.stack-work/dist/x86_64-linux/Cabal-1.22.5.0/setup/setup ...
+Configuring hscurses-1.4.2.0...
+configure: WARNING: unrecognized options: --with-gcc
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking for addnstr in -lcurses... yes
+checking for addnstr in -lncurses... yes
+checking for waddnwstr in -lncursesw... yes
+checking for addnstr in -lpdcurses... no
+checking for waddnwstr in -lpdcursesw... no
+checking for iconv in -liconv... no
+checking for libiconv in -liconv... no
+checking for libiconv... no
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking iconv.h usability... yes
+checking iconv.h presence... yes
+checking for iconv.h... yes
+checking curses.h usability... yes
+checking curses.h presence... yes
+checking for curses.h... yes
+checking ncurses.h usability... yes
+checking ncurses.h presence... yes
+checking for ncurses.h... yes
+checking ncursesw/ncurses.h usability... no
+checking ncursesw/ncurses.h presence... no
+checking for ncursesw/ncurses.h... no
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking langinfo.h usability... yes
+checking langinfo.h presence... yes
+checking for langinfo.h... yes
+checking wchar.h usability... yes
+checking wchar.h presence... yes
+checking for wchar.h... yes
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking signal.h usability... yes
+checking signal.h presence... yes
+checking for signal.h... yes
+configure: creating ./config.status
+config.status: creating hscurses.buildinfo
+config.status: creating cbits/config.h
+configure: WARNING: unrecognized options: --with-gcc
+Building hscurses-1.4.2.0...
+Preprocessing library hscurses-1.4.2.0...
+[1 of 6] Compiling UI.HSCurses.Logging ( UI/HSCurses/Logging.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/UI/HSCurses/Logging.o )
+[2 of 6] Compiling UI.HSCurses.CWString ( .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/UI/HSCurses/CWString.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/UI/HSCurses/CWString.o )
+[3 of 6] Compiling UI.HSCurses.IConv ( .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/UI/HSCurses/IConv.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/UI/HSCurses/IConv.o )
+
+UI/HSCurses/IConv.hsc:64:1: Warning: Tab character
+
+UI/HSCurses/IConv.hsc:65:1: Warning: Tab character
+
+UI/HSCurses/IConv.hsc:66:1: Warning: Tab character
+
+UI/HSCurses/IConv.hsc:75:1: Warning: Tab character
+
+UI/HSCurses/IConv.hsc:76:1: Warning: Tab character
+[4 of 6] Compiling UI.HSCurses.Curses ( .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/UI/HSCurses/Curses.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/UI/HSCurses/Curses.o )
+
+UI/HSCurses/Curses.hsc:190:1: Warning:
+    The import of ‘UI.HSCurses.CWString’ is redundant
+      except perhaps to import instances from ‘UI.HSCurses.CWString’
+    To import instances alone, use: import UI.HSCurses.CWString()
+[5 of 6] Compiling UI.HSCurses.CursesHelper ( UI/HSCurses/CursesHelper.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/UI/HSCurses/CursesHelper.o )
+
+UI/HSCurses/CursesHelper.hs:439:11: Warning:
+    Pattern match(es) are non-exhaustive
+    In an equation for ‘mergeNothing’:
+        Patterns not matched:
+            ((Just _) : _) []
+            [] (_ : _)
+[6 of 6] Compiling UI.HSCurses.Widgets ( UI/HSCurses/Widgets.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/UI/HSCurses/Widgets.o )
+
+UI/HSCurses/Widgets.hs:728:11: Warning:
+    Pattern match(es) are non-exhaustive
+    In an equation for ‘drawRows’:
+        Patterns not matched: (_ : _) [] _ _ _ _
+
+UI/HSCurses/Widgets.hs:734:11: Warning:
+    Pattern match(es) are non-exhaustive
+    In an equation for ‘drawCols’:
+        Patterns not matched: (_ : _) _ [] _ _ _ _
+In-place registering hscurses-1.4.2.0...
+Installing library in
+/home/frank/Documents/Haskell/WeatherApplication/.stack-work/install/x86_64-linux/lts-5.3/7.10.3/lib/x86_64-linux-ghc-7.10.3/hscurses-1.4.2.0-InoUdf6uQkOErRUNnh9r29
+Registering hscurses-1.4.2.0...

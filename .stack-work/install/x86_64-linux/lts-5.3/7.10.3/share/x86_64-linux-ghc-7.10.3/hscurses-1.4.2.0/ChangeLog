@@ -1,0 +1,23 @@
+1.4.2.0 (2015-02-12_
+  - support for werase and winsch (thanks to Ryan Newton)
+  - add wnoutrefresh for more efficient updates of multiple windows (Ryan Newton)
+  - use getmaxyx for scrSize,  remove non-recommended approach of reading
+    LINES and COLS global variables (Ryan Newton)
+  - fixed findNextActiveCell (Matthew Hague)
+  - support for GHC 7.8 (Miëtek Bak)
+
+1.4.1.2 (2012-09-12)
+  - support for GHC 7.6
+
+1.4.1.1 ?
+
+1.4.1.0 (2011-09-11)
+  - support for GHC 7.2 (thanks to thoughtpolice)
+  - support for windows (thanks to José Romildo Malaquias)
+
+1.4.0.0 (2011-02-02)
+  - support for GHC 7
+  - dropped support for GHC 6.10
+  - re-added support for unicode
+  - use new exception API
+  - proper version constraints in .cabal file

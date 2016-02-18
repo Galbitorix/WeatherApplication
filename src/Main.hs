@@ -21,7 +21,7 @@ main = do
 
   let city = intercalate "%20" $ splitOn " " c
   apiKey <- myAPIKey
-  cond <- getConditions apiKey city state -- myCity myState
+  cond <- getConditions apiKey city state
   mainscr <- initScr
   --(x , y) <- scrSize -- line, column -- causing issues
 
@@ -74,7 +74,7 @@ getObsTime :: Observation -> [Char]
 getObsTime (Observation t _ _ _ _ _) = t
 
 myAPIKey :: IO String -- from wunderground.com, 500 queries per day, 10 per minute
-myAPIKey = readFile "WundergroundKey.txt"
+myAPIKey = readFile "/home/frank/bin_storage/WundergroundKey.txt" >>= (\key -> return $ newLength key)
 
 myCity :: String
 myCity = "Cleveland"
